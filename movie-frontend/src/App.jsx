@@ -2,6 +2,8 @@
 // import reactLogo from './assets/react.svg'
 // import viteLogo from '/vite.svg'
 import './App.css'
+//default export vs named export
+import MovieCard from './components/MovieCard'
 
 function App() {
   //A component in react returns JSX markup. 
@@ -11,19 +13,16 @@ function App() {
   return (
     //fragment <></>
     <>
-  
-    <Text display={'Ubong'}/>
+      <MovieCard movie={{title: "Ubong's Film", release_date: "2025" }}></MovieCard>
+      <MovieCard movie={{title: "Favour's Film", release_date: "2025" }}></MovieCard>
+      <MovieCard movie={{title: "Vine's Film", release_date: "2025" }}></MovieCard>
+      <MovieCard movie={{title: "Jewel's Film", release_date: "2025" }}></MovieCard>
     
-    <Text display={'Hello'}/>
-   </>
+    
+    
+    </>
   )
 }
-//creatind/defining A custom component
-function Text({display}){
-  return (
-    <div>
-      <p>{display}</p>
-    </div>
-  )
-}
+
+
 export default App

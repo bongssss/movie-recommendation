@@ -1,4 +1,5 @@
 function MovieCard({movie}){
+    
     function onFaveClick(){
         alert("clicked")
     }
