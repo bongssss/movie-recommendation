@@ -3,7 +3,7 @@
 // import viteLogo from '/vite.svg'
 import './App.css'
 //default export and not a named export
-//import MovieCard from './components/MovieCard'
+import MovieCard from './components/MovieCard'
 
 import Home from './pages/Home'
 
