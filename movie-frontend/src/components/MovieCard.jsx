@@ -1,6 +1,11 @@
 function MovieCard({movie}){
-    
-    function onFaveClick(){
+//created a component(function)
+//called MovieCard that returns several properties 
+//including the card which contains the poster
+//which contains the image which is overlayed by a button which returns an alert when clicked(for now)
+//it also has a div that contains the title as a heading and the release date as a paragraph
+
+    function onFaveClick(){ //this is the function that is returned by the button when clicked
         alert("clicked")
     }
     return <div className="movie-card">
@@ -19,4 +24,5 @@ function MovieCard({movie}){
     </div>
   
 }
-export default MovieCard;
+
+export default MovieCard; // the function(component) is then exported as a default export
