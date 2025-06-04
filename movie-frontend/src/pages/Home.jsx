@@ -3,7 +3,7 @@ import { useState } from "react";
 
 
 function Home() {
-    const [searchQuery, setSearchQuery] = useState([]);
+    const [searchQuery, setSearchQuery] = useState("")
 
 
     const movies =[
@@ -13,9 +13,11 @@ function Home() {
         {id:4, title:"The Lord of the Rings", release_date:2001},
     ];
 
-    const handleSearch =() => {
-        console.log("Search button clicked");
-    }
+    const handleSearch =(e) => {
+        e.preventDefault();
+        alert(searchQuery);
+        setSearchQuery('');
+    };
     return (
     <div className="home">
         <form onSubmit={handleSearch} className="search-form">
@@ -26,9 +28,14 @@ function Home() {
             <button type="submit" className="search-button">Search</button>
         </form>
         <div className="movies-grid">
-            {movies.map((movie) =>(
+            {movies.map((movie) =>
+               
+                (
+                 movie.title.toLowerCase().startsWith(searchQuery) && 
                 <MovieCard movie={movie} key={movie.id}/>
-        ))}
+            
+            )
+        )}
             
         </div>
     </div>

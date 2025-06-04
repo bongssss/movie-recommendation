@@ -6,6 +6,7 @@ import './App.css'
 //import MovieCard from './components/MovieCard'
 
 import Home from './pages/Home'
+import { Routes } from 'react-router-dom';
 
 function App() {
   //A component in react returns JSX markup. 
@@ -17,9 +18,7 @@ function App() {
     //fragment <> </> allows for repetition of components
     <>
      <Home/>
-    
-    
-    
+  
     </>
   )
 }
