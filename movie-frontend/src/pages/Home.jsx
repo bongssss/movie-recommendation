@@ -26,7 +26,7 @@ function Home() {
         }
         loadPopularMovies()
     }, [
-        // eslint-disable-next-line react-hooks/exhaustive-deps
+        // eslint-disable-next-line react-hooks/exhaustive-d
     ])
 
     const handleSearch = (e) => {
