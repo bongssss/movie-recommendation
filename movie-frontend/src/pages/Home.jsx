@@ -1,7 +1,7 @@
 import MovieCard from "../components/MovieCard";
 import { useState, useEffect } from "react"; //useState and useEffect react hooks
 import '../css/Home.css'
-import { getPopularMovies } from "../services/api";
+import { getPopularMovies, searchMovies } from "../services/api";
 
 
 function Home() {
@@ -29,10 +29,27 @@ function Home() {
         
     ])
 
-    const handleSearch = (e) => {
+    const handleSearch = async (e) => {
         e.preventDefault();
-        alert(searchQuery);
-        setSearchQuery('');
+        if (!searchQuery.trim()) return
+        if (loading) return
+        
+        setLoading(true)
+        try {
+
+            const searchResults =  await searchMovies(searchQuery)
+            setMovies(searchResults)
+            setError(null)
+
+            } catch (err) {
+
+                console.log(err)
+                setError('Failed to complete search...')
+                
+        } finally {
+            setLoading(false)
+        }
+       // setSearchQuery("")
     };
     return (
     <div className="home">
@@ -47,6 +64,7 @@ function Home() {
                 Search
             </button>
         </form>
+        
         {error && <div className='error-message'>{error}</div>}
         {loading ? (
             <div className="loading">Loading...</div>

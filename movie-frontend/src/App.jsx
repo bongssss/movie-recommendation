@@ -9,6 +9,7 @@ import Favorites from './pages/Favorites';
 import Home from './pages/Home'
 import { Route, Routes } from 'react-router-dom';
 import NavBar from './components/NavBar';
+import { MovieProvider } from './contexts/MovieContext';
 function App() {
   //A component in react returns JSX markup. 
   //something is only jsx if it has a parent element 
@@ -18,7 +19,7 @@ function App() {
   return (
     //fragment <> </> allows for repetition of components
     //<>
-    <div >
+    <MovieProvider >
       <NavBar></NavBar>
     <main className='main-content'>
       <Routes>
@@ -26,7 +27,7 @@ function App() {
         <Route path='/favorites' element={ <Favorites />}></Route>
       </Routes>
     </main>
-    </div>
+    </MovieProvider>
    // </>
   )
 }
