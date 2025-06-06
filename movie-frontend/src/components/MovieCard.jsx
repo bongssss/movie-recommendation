@@ -1,4 +1,4 @@
-import '../css/NavBar.css'
+import '../css/MovieCard.css'
 import { useMovieContext } from '../contexts/MovieContext'; 
 
 function MovieCard({movie}){
@@ -12,8 +12,7 @@ function MovieCard({movie}){
 
     function onFaveClick(e){ //this is the function that is returned by the button when clicked
         e.preventDefault()
-        if(favorite)
-            removeFromFavorites(movie.id)
+        if(favorite) removeFromFavorites(movie.id)
             else addToFavorites(movie)
     
 }
@@ -23,7 +22,7 @@ function MovieCard({movie}){
 
             <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title}/>
         <div className="movie-overlay">
-            <button className={`favorite-btn ${favorite ? 'active': ''}`} onClick={onFaveClick}>♥</button>
+            <button className={`favorite-btn ${favorite ? "active": ""}`} onClick={onFaveClick}>♥</button>
         </div>
         </div>
         
@@ -35,4 +34,5 @@ function MovieCard({movie}){
   
 }
 
-export default MovieCard; // the function(component) is then exported as a default export
+export default MovieCard; 
+// the function(component) is then exported as a default export
