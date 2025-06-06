@@ -115,7 +115,7 @@ This project is licensed under the MIT License. See the `LICENSE` file for more 
 
 ## 📸 Screenshot(s)
 
-![Movie recommendation webapp Homepage!](src/assets/movie.jpg "Home Page")
+![Movie recommendation webapp Homepage!](/movie-frontend/src/assets/movie.jpg "Home Page")
 
 ---
 
